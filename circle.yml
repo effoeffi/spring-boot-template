@@ -9,13 +9,10 @@ machine:
   environment:
       PROJECT_NAME: spring-boot-template
       TEST_RESULT_PATH: /target/surefire-reports/
-      BUILDER_IMAGE_NAME: effi/$PROJECT_NAME
-dependencies:
-  override:
-    - docker build -t $BUILDER_IMAGE_NAME -f Dockerfile.build .
+      BUILDER_IMAGE_NAME: maven:3.3.3-jdk-8
 test:
   override:
-    - docker run --rm -v "$PWD":$PROJECT_NAME -w $PROJECT_NAME $BUILDER_IMAGE_NAME
+    - docker run --rm -v "$PWD":/$PROJECT_NAME -w /$PROJECT_NAME $BUILDER_IMAGE_NAME /src/build.sh
   post:
     # copy test results
-    - cp TEST_RESULT_PATH $CIRCLE_TEST_REPORTS
+    - cp $TEST_RESULT_PATH $CIRCLE_TEST_REPORTS
