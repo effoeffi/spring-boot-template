@@ -2,7 +2,7 @@ test:
   override:
     - mvn clean install
   post:
-    - mkdir -p $CIRCLE_TEST_REPORTS/surefire-reports/
-    - find . -type f -regex ".*/target/surefire-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/surefire/ \;
-    - mkdir -p $CIRCLE_TEST_REPORTS/failsafe-reports/
-    - find . -type f -regex ".*/target/failsafe-reports/.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/failsafe/ \;
+    - mkdir -p $CIRCLE_TEST_REPORTS/surefire/
+    - find . -type f -regex ".*/target/surefire-reports/Test.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/surefire/ \;
+    - mkdir -p $CIRCLE_TEST_REPORTS/failsafe/
+    - find . -type f -regex ".*/target/failsafe-reports/Test.*xml" -exec cp {} $CIRCLE_TEST_REPORTS/failsafe/ \;
