@@ -25,13 +25,15 @@ public class HelloControllerTest {
 
     @Autowired
     private MockMvc mvc;
+    @Autowired
+    private Configuration config;
 
     @Test
     public void testGetHello() throws Exception {
 
-        logger.debug("testGetHello, expecting for greetings from Spring Boot!");
+        logger.debug("testGetHello, expecting for greetings from Spring Boot...");
         mvc.perform(MockMvcRequestBuilders.get("/").accept(MediaType.APPLICATION_JSON))
                 .andExpect(status().isOk())
-                .andExpect(content().string(equalTo("Greetings from Spring Boot!")));
+                .andExpect(content().string(equalTo(config.getHelloGreeting())));
     }
 }
