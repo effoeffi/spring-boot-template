@@ -6,4 +6,4 @@ Based on [gs-spring-boot](https://github.com/spring-guides/gs-spring-boot), temp
 1. Spring REST Controller.
 2. Logbase.
 3. Application properties injection using Spring.
-4. Build using [Circle CI](https://circleci.com/gh/effoeffi/spring-boot-template).
+4. Build & testing using maven surefire & [Circle CI](https://circleci.com/gh/effoeffi/spring-boot-template).
