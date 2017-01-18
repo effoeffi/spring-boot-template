@@ -19,9 +19,9 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 @RunWith(SpringRunner.class)
 @SpringBootTest
 @AutoConfigureMockMvc
-public class TestHelloController {
+public class HelloControllerTest {
 
-    private static final Logger logger = LoggerFactory.getLogger(TestHelloController.class);
+    private static final Logger logger = LoggerFactory.getLogger(HelloControllerTest.class);
 
     @Autowired
     private MockMvc mvc;
